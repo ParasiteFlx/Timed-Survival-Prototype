@@ -10,3 +10,5 @@ https://youtu.be/_ADHPtc6J1U  = DEFEAT
 
 RO:
 
+Acesta este un proof of concept pentru un joc de supraviețuire contra‑cronometru, dezvoltat integral în Godot folosind GDScript. Proiectul include un mediu generat procedural, asigurând un layout unic pentru fiecare sesiune, și entități inamice autonome implementate cu navigație de tip NavMesh și logică bazată pe stări. Pentru a crea un gameplay loop dinamic, am utilizat triggeri de proximitate și secvențe de activare temporizate pentru a declanșa urmărirea jucătorului. Pentru o imersiune sporită, am integrat un sistem de scalare audio spațială în funcție de distanța în timp real față de jucător. Demo‑urile tehnice pentru acest proiect pot fi găsite la următorul link.
+
