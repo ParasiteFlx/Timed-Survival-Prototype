@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw4h1j2ro2ox0"]
+
+[ext_resource type="Script" uid="uid://c71404mpoxiq4" path="res://exit.gd" id="1_6sfst"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k4lu3"]
+emission_enabled = true
+emission = Color(0, 18.892157, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6sfst"]
+material = SubResource("StandardMaterial3D_k4lu3")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6sfst"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_24kvk"]
+height = 22.63855
+radius = 1.5698242
+
+[node name="StaticBody3D" type="StaticBody3D"]
+script = ExtResource("1_6sfst")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 100, 0, 0, 0, 3, 0, 9.603422, 0)
+mesh = SubResource("CylinderMesh_6sfst")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_6sfst")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.6412964, 0)
+shape = SubResource("CylinderShape3D_24kvk")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
